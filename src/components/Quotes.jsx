@@ -1,24 +1,23 @@
 import React from "react";
-
+import { useContext } from "react";
+import { QuotesContext } from "../context/Quotes.context";
 const Quotes = () => {
+  const { allQuotes } = useContext(QuotesContext);
+
   return (
     <div>
-      <div className="quote">
-        <p className="quote__text">
-          “The first rule of any technology used in a business is that
-          automation applied to an efficient operation will magnify the
-          efficiency. The second is that automation applied to an inefficient
-          operation will magnify the inefficiency.”
-        </p>
-      </div>
-      <div className="quote">
-        <p className="quote__text">
-          “The first rule of any technology used in a business is that
-          automation applied to an efficient operation will magnify the
-          efficiency. The second is that automation applied to an inefficient
-          operation will magnify the inefficiency.”
-        </p>
-      </div>
+       <h1 className="heading">All Quotes</h1>
+      {allQuotes.map(({ content, author }) => (
+        <>
+       
+          <div className="quote-details">
+            <div className="quote">
+              <p className="quote__text">{content}</p>
+            </div>
+            <p className="quote-details__author">- {author}</p>
+          </div>
+        </>
+      ))}
     </div>
   );
 };
