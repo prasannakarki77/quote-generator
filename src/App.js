@@ -5,12 +5,22 @@ import Quotes from "./components/Quotes";
 import { QuotesContext } from "./context/Quotes.context";
 import "./styles/app.scss";
 function App() {
-  const { getQuotesBtn, getRandomQuoteHandler, randomQuote } =
-    useContext(QuotesContext);
+  const {
+    getQuotesBtn,
+    getRandomQuoteHandler,
+    getQuotesBtnHandler,
+    randomQuote,
+    setGetQuotesBtn,
+  } = useContext(QuotesContext);
+
+  const randomBtnHandler = () => {
+    getRandomQuoteHandler();
+    setGetQuotesBtn(false);
+  };
   return (
     <div className="container">
       <div>
-        <button className="random-btn" onClick={getRandomQuoteHandler}>
+        <button className="random-btn" onClick={randomBtnHandler}>
           random <TbRefresh />
         </button>
       </div>

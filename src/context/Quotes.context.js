@@ -1,20 +1,28 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
-import { randomQuote } from "quotegarden";
 export const QuotesContext = createContext();
 
 export const QuotesProvider = ({ children }) => {
-  const [randomQuote, setRandomQuote] = useState(false);
+  const [randomQuote, setRandomQuote] = useState({});
   const [getQuotesBtn, setGetQuotesBtn] = useState(false);
-
-  const getQuotesBtnHandler = () => {
+  const [allQuotes, setAllQuotes] = useState([]);
+  const [currentAuthor, setCurrentAuthor] = useState("");
+  useEffect(() => {
+    getRandomQuoteHandler();
+    console.log(randomQuote);
+  }, []);
+  const getQuotesBtnHandler = async () => {
+    const response = await fetch("https://api.quotable.io/quotes");
+    const data = await response.json();
     setGetQuotesBtn((prev) => !prev);
+    setAllQuotes(data.results);
   };
   const getRandomQuoteHandler = async () => {
     const response = await fetch("https://api.quotable.io/random");
     const data = await response.json();
     console.log(data);
     setRandomQuote(data);
+    setCurrentAuthor(data.author);
   };
   const value = {
     getQuotesBtn,
@@ -22,6 +30,7 @@ export const QuotesProvider = ({ children }) => {
     getQuotesBtnHandler,
     getRandomQuoteHandler,
     randomQuote,
+    allQuotes,
   };
   return (
     <QuotesContext.Provider value={value}>{children}</QuotesContext.Provider>
