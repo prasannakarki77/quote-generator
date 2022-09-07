@@ -1,0 +1,46 @@
+.quotes-container {
+  max-width: 800px;
+  margin: 100px auto;
+}
+
+.quote {
+  display: flex;
+  margin-bottom: 100px;
+  &__text {
+    font-weight: 500;
+    font-size: 36px;
+  }
+  &::before {
+    content: "";
+    min-width: 8px;
+    background-color: #f7df94;
+    border-radius: 80px;
+    margin-right: 100px;
+  }
+}
+
+.author-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 30px;
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.author {
+  &__name {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  &__type {
+    font-weight: 500;
+    font-size: 14px;
+    color: #828282;
+  }
+}
