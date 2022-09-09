@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/quote.scss";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { QuotesContext } from "../context/Quotes.context";

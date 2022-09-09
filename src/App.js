@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { TbRefresh } from "react-icons/tb";
 import Quote from "./components/Quote";
 import Quotes from "./components/Quotes";
@@ -8,8 +8,6 @@ function App() {
   const {
     getQuotesBtn,
     getRandomQuoteHandler,
-    getQuotesBtnHandler,
-    randomQuote,
     setGetQuotesBtn,
   } = useContext(QuotesContext);
 
