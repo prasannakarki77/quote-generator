@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+@import "./mixins.scss";
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +22,9 @@
   border: none;
   cursor: pointer;
 
+  @include breakpoint(960px) {
+    margin-right: 10px;
+  }
   svg {
     margin-left: 10px;
     font-size: 25px;

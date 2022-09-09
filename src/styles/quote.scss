@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 .quotes-container {
   max-width: 800px;
   margin: 100px auto;
@@ -11,11 +13,20 @@
 
 .quote-details {
   margin-bottom: 100px;
+  @include breakpoint(400px) {
+    margin-bottom: 40px;
+  }
   &__author {
     margin-top: 50px;
     font-weight: 700;
     font-size: 24px;
     text-align: right;
+    @include breakpoint(600px) {
+      font-size: 20px;
+    }
+    @include breakpoint(400px) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -24,6 +35,12 @@
   &__text {
     font-weight: 500;
     font-size: 36px;
+    @include breakpoint(600px) {
+      font-size: 24px;
+    }
+    @include breakpoint(400px) {
+      font-size: 20px;
+    }
   }
   &::before {
     content: "";
@@ -31,6 +48,12 @@
     background-color: #f7df94;
     border-radius: 80px;
     margin-right: 100px;
+    @include breakpoint(600px) {
+      margin-right: 30px;
+    }
+    @include breakpoint(400px) {
+      margin-right: 20px;
+    }
   }
 }
 
@@ -40,6 +63,12 @@
   align-items: center;
   padding: 50px 30px;
   transition: all 0.1s ease-out;
+  @include breakpoint(600px) {
+    padding: 40px 20px;
+  }
+  @include breakpoint(400px) {
+    padding: 20px 10px;
+  }
 
   &:hover {
     background-color: #000;
@@ -52,6 +81,12 @@
   &__name {
     font-weight: 700;
     font-size: 24px;
+    @include breakpoint(600px) {
+      font-size: 20px;
+    }
+    @include breakpoint(400px) {
+      font-size: 18px;
+    }
   }
   &__type {
     font-weight: 500;
