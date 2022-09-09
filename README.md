@@ -12,7 +12,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/prasannakarki77/quote-generator.git">
+    <a href="https://devchallenges.io/solutions/GbKeXk7da98H7vzagGTl">
       Solution
     </a>
     <span> | </span>
